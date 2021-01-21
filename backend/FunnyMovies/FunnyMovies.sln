@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29503.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunnyMovies", "FunnyMovies\FunnyMovies.csproj", "{A5E46037-6C54-4C37-B481-937AC2014D83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunnyMovies.Tests", "FunnyMovies.Tests\FunnyMovies.Tests.csproj", "{B0C5E894-02C4-4EF7-92F9-FD8DA050B320}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5E46037-6C54-4C37-B481-937AC2014D83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5E46037-6C54-4C37-B481-937AC2014D83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5E46037-6C54-4C37-B481-937AC2014D83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5E46037-6C54-4C37-B481-937AC2014D83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0C5E894-02C4-4EF7-92F9-FD8DA050B320}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0C5E894-02C4-4EF7-92F9-FD8DA050B320}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0C5E894-02C4-4EF7-92F9-FD8DA050B320}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0C5E894-02C4-4EF7-92F9-FD8DA050B320}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {914989F3-CFEF-413C-9F83-C5B8B03D23F7}
+	EndGlobalSection
+EndGlobal
