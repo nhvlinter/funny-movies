@@ -1,0 +1,78 @@
+{
+  "name": "eOfficePortal",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.9.5",
+    "@material-ui/icons": "^4.9.1",
+    "@material-ui/lab": "^4.0.0-alpha.57",
+    "babel-loader": "^8.0.6",
+    "babel-plugin-named-asset-import": "^0.3.6",
+    "classnames": "^2.2.6",
+    "get-youtube-title": "^1.0.1",
+    "history": "^4.10.1",
+    "i18next": "^19.3.2",
+    "lodash-es": "^4.17.15",
+    "mobx": "^5.15.4",
+    "mobx-react": "^6.1.8",
+    "mobx-react-lite": "^1.5.2",
+    "mobx-state-router": "^4.0.6",
+    "moment": "^2.24.0",
+    "node-sass": "^4.13.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-i18next": "^11.3.3",
+    "react-youtube": "^7.13.0",
+    "sass-loader": "^8.0.2",
+    "typings-for-scss-modules-loader": "^1.5.1"
+  },
+  "devDependencies": {
+    "@types/classnames": "^2.2.10",
+    "@types/d3-dsv": "^1.0.36",
+    "@types/dom-mediacapture-record": "^1.0.3",
+    "@types/file-saver": "^2.0.1",
+    "@types/history": "^4.7.5",
+    "@types/jest": "^25.1.4",
+    "@types/lodash-es": "^4.17.3",
+    "@types/nanoid": "^2.1.0",
+    "@types/node": "13.9.0",
+    "@types/react": "16.9.23",
+    "@types/react-beautiful-dnd": "^12.1.1",
+    "@types/react-color": "^3.0.1",
+    "@types/react-dnd-multi-backend": "^5.0.0",
+    "@types/react-dom": "^16.9.5",
+    "less": "^3.11.1",
+    "less-loader": "^5.0.0",
+    "raw-loader": "^4.0.0",
+    "react-scripts": "3.2.0",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.8.3"
+  },
+  "scripts": {
+    "start": "node scripts/start.js",
+    "build": "node scripts/build.js",
+    "test": "node scripts/test.js",
+    "eject": "react-scripts eject"
+  },
+  "babel": {
+    "presets": [
+      "react-app"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "development": [
+      "last 1 chrome version"
+    ],
+    "production": [
+      "last 1 chrome version"
+    ],
+    "production2": [
+      "> 1%",
+      "not dead",
+      "not op_mini all"
+    ]
+  }
+}
