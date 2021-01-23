@@ -3,23 +3,37 @@ import { observer } from 'mobx-react-lite';
 import { useStore } from '../../stores';
 
 import { BasicLayout } from '../../layouts/BasicLayout';
-import MaterialTable from "material-table";
-import { Card, CardContent, CardHeader, Typography,Grid, OutlinedInput, Button } from "@material-ui/core";
+import MuiAlert, { AlertProps } from '@material-ui/lab/Alert';
+import { Card, CardContent, CardHeader, Typography,Grid, OutlinedInput, Button, Snackbar } from "@material-ui/core";
 import styles from "./SharePage.module.scss";
 import { Movie } from "../../models/Movie";
 export const SharePage: FC<{}> = observer(({}) => {
     const { routerStore, sFunny, currentUser } = useStore();
+    const [open, setOpen] = React.useState(false);
+    const [errMsg, setErrMsg] = React.useState("");
     if(!currentUser) routerStore.goTo("home");
     useEffect(() => {
         sFunny.initSharePage();
     }, []);
     const shareHandler = useCallback(()=>{
         if(currentUser){
-            Movie.save(sFunny.sharedUrl,currentUser.id).then(()=>{
+            Movie.save(sFunny.sharedUrl,currentUser.id).then(([err, data])=>{
+                if(err){
+                    setErrMsg(err.message);
+                    setOpen(true);
+                    return;
+                }
                 routerStore.goTo("home");
             });    
         }
-    },[])
+    },[]);
+    const handleClose = (event?: React.SyntheticEvent, reason?: string) => {
+      if (reason === 'clickaway') {
+        return;
+      }
+
+      setOpen(false);
+    };
     return (<BasicLayout>
         <div style={{ display:'flex', justifyContent:'center' }}>
         <Card variant="outlined" style={{width:400, }}>
@@ -44,6 +58,11 @@ export const SharePage: FC<{}> = observer(({}) => {
             </Grid>
         </CardContent>
         </Card></div>
+        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+          <MuiAlert elevation={6} variant="filled" onClose={handleClose} severity="error">
+            {errMsg}
+          </MuiAlert>
+        </Snackbar>
     </BasicLayout>);
 });
 

@@ -18,7 +18,10 @@ export class Movie{
             url : url,
             sharedBy : currentUserId
         };
-        const [err, x] = await aFetch<{}>("POST", `/api/Movie`, body);
+        const [err, data] = await aFetch<{}>("POST", `/api/Movie`, body);
+        if(data && data["error"]){
+            return [new Error(data["error"]), null] as const;
+        }
         return [err, null] as const;
     }
 }

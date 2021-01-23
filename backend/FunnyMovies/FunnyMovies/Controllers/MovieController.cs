@@ -30,7 +30,7 @@ namespace FunnyMovies.Controllers
 		}
 		// POST: api/Movie
 		[HttpPost]
-		public void Post(Movie movie)
+		public HttpResponseMessage Post(Movie movie)
 		{
 			if (movie.Url.ToLower().Contains("youtube"))
 			{
@@ -38,8 +38,17 @@ namespace FunnyMovies.Controllers
 				string videoID = HttpUtility.ParseQueryString(videoUri.Query).Get("v");
 				movie.Url = videoID;
 			}
-
+			try
+			{
+				var title = Methods.GetYoutubeInfo(movie.Url, "title");
+				var description = Methods.GetYoutubeInfo(movie.Url, "shortDescription");
+			}
+			catch(Exception e)
+			{
+				return Methods.getHttpResponseMessage("{\"error\":\"Invalid Url\"}");
+			}
 			QueryHelper.AddMovie(movie);
-        }
+			return Methods.getHttpResponseMessage(string.Empty);
+		}
     }
 }
