@@ -13,6 +13,8 @@ namespace FunnyMovies
 	{
 		protected void Application_Start()
 		{
+			RouteTable.Routes.RouteExistingFiles = true;
+
 			AreaRegistration.RegisterAllAreas();
 			GlobalConfiguration.Configure(WebApiConfig.Register);
 			FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
